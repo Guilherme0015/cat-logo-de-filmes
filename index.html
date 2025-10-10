@@ -46,7 +46,81 @@
             const form = document.getElementById('cadastro-filme');
             const listaFilmesContainer = document.getElementById('lista-filmes');
 
-            //-------------------------------------------------------------------------
-            //FUNÇÃO DE REMOÇÃO
-            //-------------------------------------------------------------------------
-            //**
+            //----------------------
+// FUNÇÃO DE REMOÇÃO
+// ---------------------
+/**
+* Remove um filme do array de dados e do elemento HTML na tela.
+*@param {number} indice - A posição do filme no array 'catalogo'
+*@param {HTMLElement} elementoDOM - O elemento <div> do filme a ser removido da tela
+*/
+
+function removerFilme(indice, elementoDOM) {
+// A. REMOÇÃO DO ARRAY (Lógica)
+// splice(indice, 1) remove 1 elemento a partir da posição 'indice'.
+// Isso atualiza o array 'catalogo'
+Catalogos.splice(indice, 1);
+
+//  B. REMoaçao do array (logica)
+//  o.metodo .remove( )retira o elemento html da visualizaçao do usuario
+elementoDOM.remove();
+
+// opicional: atualiza a mensagem da lista se estiver vazia
+if (Catalogos.length === 0 ) {
+    listaFilmesContainer.innerHTML = '<p>nenhum filme cadastro ainda.,</p>';
+}
+console.log(` fiolme no indice ${indice}removido.  Catalogo atualizado:` , catalago);
+}
+
+//-----------------------------------------
+// funçao de renderizaçao
+//-----------------------------------------
+/**
+ *  cria e exibe a estrutura a HTML de um filme na lista.
+ * @param {object} filme - o objeto {titulo, sinopse} do filme.
+ * @param { number} indice - o indice atual do filme no array 'catalogo'.
+ */
+function  renderirFilme(filme, indice) {
+    // remove a mensagem inicial se for o primeiro filme
+}
+    if ( catalogo.length === 1) {
+listaFilmesContainer.innerHTML = '';
+    }
+ // A. criaçao de elementos HTML (docuument.createElement
+
+ // cria a <div> que sera o conteiner de cada filme.
+    const filmeDiv = document.createElement('div');
+    filmeDiv.classList.add('filme-item'); // adiciona uma classe paara estilizaçao
+
+    // cria o <h3> para o titulo e define seu texto.
+        const tituloH3 = document.createElement('h3');
+        titulosH3.textContent = fime.titulo;
+
+        // cria p <p> para a sinopse
+            const sinopseP= document.createElement('button');
+        sinopseP.textContent = filme.sinopse;
+
+        // Cria o botão de remoção.
+const removerBotao = document.createElement('button');
+'Remover'; removerBotao.textContent
+
+removerBotao.classList.add('btn-remover');
+// B. DEFINIÇÃO DO EVENTO DE REMOÇÃO (addEventListener)
+// Anexa a função removerFilme ao clique do botão.
+removerBotao.addEventListener('click', () => {
+// Ao clicar, chamamos a função, passando o indice (posição) e a propria <div> (filmeDiv).
+removerFilme(indice, filmeDiv);
+
+});
+
+
+// C. ANEXAR ELEMENTOS (appendChild)
+
+// Monta a estrutura hierárquica:
+// FilmeDiv
+</script>
+
+
+
+</body>
+</html>
